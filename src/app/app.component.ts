@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit, QueryList, ViewChildren} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import {LocalStorageService} from './services/local-storage.service';
 import {Task} from './interfaces-and-types/coomon-interfaces';
@@ -14,7 +14,6 @@ import {TaskType} from './interfaces-and-types/common-types';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit, OnDestroy {
-  @ViewChildren('itemsList') itemsList!: QueryList<CdkDragDrop<any>>;
   public itemFormControl = new FormControl(null, Validators.required);
   public filterFormControl = new FormControl(null);
   public inProgressTasks: Task[] = [];
