@@ -1,0 +1,61 @@
+@import '../styles';
+
+:host {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    padding: 20px 50px;
+    background-color: $container-background-color;
+    color: $container-text-color;
+
+    .add-item-wrapper {
+      @include inputWrapper();
+
+      input {
+        @include setInput();
+      }
+
+      button {
+        all: unset;
+        color: white;
+        cursor: pointer;
+
+        &:disabled {
+          cursor: no-drop;
+        }
+
+        mat-icon {
+          position: absolute;
+          right: 15px;
+          top: 7px;
+          font-size: 35px;
+        }
+      }
+    }
+
+    .filter-wrapper {
+      @include inputWrapper();
+
+      input {
+        @include setInput();
+      }
+    }
+
+    .reset {
+      all: unset;
+      font-size: 12px;
+      text-align: center;
+      margin-top: 10px;
+      cursor: pointer;
+
+      &:disabled {
+        cursor: default;
+      }
+    }
+  }
+}

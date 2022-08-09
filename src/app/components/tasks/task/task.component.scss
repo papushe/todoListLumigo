@@ -1,0 +1,31 @@
+@import "src/styles";
+
+:host {
+  background-color: $item-background-color;
+  padding: 10px;
+  display: flex;
+  margin-bottom: 2px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: grab;
+
+  .available-actions-wrapper {
+    display: flex;
+
+    mat-icon {
+      cursor: pointer;
+
+      &.clear {
+        color: red;
+      }
+
+      &.pause {
+        color: yellow;
+      }
+
+      &.done {
+        color: green;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel (closed)="panelOpenState = false" (opened)="panelOpenState = true" [disabled]="tasks?.length === 0" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>{{panelOpenState ? 'keyboard_arrow_down' : 'keyboard_arrow_right'}} </mat-icon>
+        <mat-panel-title>{{title}}</mat-panel-title>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-task (actionEmitter)="getActionFromItem()"
+              *ngFor="let task of tasks"
+              [availableActions]="availableActions"
+              [id]="task.id"
+              [task]="task"
+              cdkDrag>
+    </app-task>
+  </mat-expansion-panel>
+</mat-accordion>

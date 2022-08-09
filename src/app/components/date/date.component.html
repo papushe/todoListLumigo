@@ -1,0 +1,12 @@
+<div class="day-month-and-year-wrapper">
+  <ng-container [ngTemplateOutletContext]="{ className: 'day', pipe: 'd'}" [ngTemplateOutlet]="dateTemplate"></ng-container>
+  <div class="month-and-year-wrapper">
+    <ng-container [ngTemplateOutletContext]="{ className: 'month', pipe: 'LLL'}" [ngTemplateOutlet]="dateTemplate"></ng-container>
+    <ng-container [ngTemplateOutletContext]="{ className: 'year', pipe: 'YYYY'}" [ngTemplateOutlet]="dateTemplate"></ng-container>
+  </div>
+</div>
+<ng-container [ngTemplateOutletContext]="{ className: 'day-as-text', pipe: 'cccc'}" [ngTemplateOutlet]="dateTemplate"></ng-container>
+
+<ng-template #dateTemplate let-className="className" let-pipe="pipe">
+  <div [class]="className">{{date | date: pipe }}</div>
+</ng-template>

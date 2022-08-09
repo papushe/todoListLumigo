@@ -1,0 +1,11 @@
+:host {
+  mat-expansion-panel-header {
+    padding: unset;
+  }
+
+  ::ng-deep {
+    .mat-expansion-panel-body {
+      padding: 0;
+    }
+  }
+}

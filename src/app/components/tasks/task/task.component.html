@@ -1,0 +1,4 @@
+<span>{{task?.text}}</span>
+<div class="available-actions-wrapper">
+  <mat-icon *ngFor="let action of availableActions" [class]="action" (click)="setAction(action)">{{action}}</mat-icon>
+</div>
